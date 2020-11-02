@@ -36,7 +36,8 @@ REGIONAL_DATABASES = {
     'google.com.tr': 'tr',
     'm.google.com': 'mobile-us',
     'google.co.jp': 'jp',
-    'google.co.in': 'in'
+    'google.co.in': 'in',
+    'google.co.pt': 'pt'
 }
 
 
