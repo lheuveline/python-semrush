@@ -76,17 +76,16 @@ class SemrushClient(object):
     @staticmethod
     def parse_response(data):
         results = []
-        data = data.decode('unicode_escape')
+        data = data.decode('utf8')
         lines = data.split('\r\n')
         lines = list(filter(bool, lines))
         columns = lines[0].split(';')
-
         for line in lines[1:]:
             result = {}
             for i, datum in enumerate(line.split(';')):
-                result[columns[i]] = datum.strip('"\n\r\t')
+                if (i < len(columns)):
+                  result[columns[i]] = datum.strip('"\n\r\t')
             results.append(result)
-
         return results
 
     # Overview Reports
